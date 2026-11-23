@@ -83,7 +83,7 @@ await runBars({
     }
 
     const close = state.close(SYMBOL);
-    if (close === null) return [];
+    if (close === null || state.warmingUp) return [];
 
     // ---------------------------------------------------------------- 2. in a position: trail the peak,
     // and finish the staged plan while its second tranche is still unspent
